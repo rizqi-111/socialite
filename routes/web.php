@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/{provider}', 'GoogleController@redirect');
+Route::get('{provider}/callback', 'GoogleController@callback');
